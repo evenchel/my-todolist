@@ -1,0 +1,26 @@
+<div class="well col-md-3 col-sm-5 col-xs-12">
+    <h4 class="text-center">Available TODO-lists</h4>
+    <form (submit)="add(listName.value); listName.value=''; $event.preventDefault()" class="form-horizontal">
+        <div class="form-group">
+            <div *ngFor="let list of lists; let i = index;" class="input-group">
+                <a href="#" (click)="choose(i);" class="form-control">
+                    {{ list.listname }}
+                </a>
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button" (click)="remove(i)">x</button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <input #listName type="text" class="form-control" placeholder="Enter the list name..." required>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">Add</button>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="col-md-9 col-sm-7 col-xs-12">
+    <todolist [list]="currentList"></todolist>
+</div>
