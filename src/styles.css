@@ -1,3 +1,12 @@
 .bg-info {
-  background-color: #fff;
+    background-color: #fff;
+}
+
+.well {
+    background-color: #9fafff;
+    padding: 30px;
+}
+
+.completed {
+  text-decoration: line-through;
 }

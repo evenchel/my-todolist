@@ -27,6 +27,9 @@ export class AppComponent implements OnInit {
     }
     
     remove(index: number) {
+        if (this.todoListService.getList(index) == this.currentList) {
+            this.currentList = null;
+        }
         this.todoListService.removeList(index);
     }
 }
