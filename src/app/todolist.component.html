@@ -1,5 +1,5 @@
 <div *ngIf="list" class="col-md-12">
-    <h3>{{ list.listname }} <small>{{ list.todos.length }}/{{ countDone() }}</small></h3>
+    <h3>{{ list.listname }} <small>{{ countDone() }}/{{ list.todos.length }}</small></h3>
     <div class="row">
         <div class="col-lg-12">
             <form (submit)="add(todoName.value); todoName.value=''; $event.preventDefault()" class="form-horizontal">
