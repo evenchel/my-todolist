@@ -3,7 +3,8 @@
     <form (submit)="add(listName.value); listName.value=''; $event.preventDefault()" class="form-horizontal">
         <div class="form-group">
             <div *ngFor="let list of lists; let i = index;" class="input-group">
-                <a href="#" (click)="choose(i);" class="form-control">
+                <a href="#" (click)="choose(i);" class="btn btn-block"
+                   [ngClass]="{'active bg-success': list==currentList, 'bg-info': list!=currentList}">
                     {{ list.listname }}
                 </a>
                 <span class="input-group-btn">
@@ -13,7 +14,7 @@
         </div>
         <div class="form-group">
             <div class="input-group">
-                <input #listName type="text" class="form-control" placeholder="Enter the list name..." required>
+                <input #listName type="text" class="form-control" placeholder="Enter the list name..." maxlength="25" required>
                 <span class="input-group-btn">
                     <button class="btn btn-primary" type="submit">Add</button>
                 </span>
